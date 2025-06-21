@@ -1,0 +1,11 @@
+# Evita pujar dependències
+node_modules/
+
+# Evita arxius temporals
+dist/
+.vite/
+.env
+
+# Evita fitxers del sistema
+.DS_Store
+Thumbs.db
