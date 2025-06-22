@@ -21,7 +21,7 @@ export default function ItinerariPage({ bg, assignatures }) {
   useEffect(() => {
     const nav = document.querySelector("nav");
     if (nav) {
-      nav.style.padding = isMobile ? "2px 6px" : "15px 30px";
+      nav.style.padding = isMobile ? "5px 8px" : "15px 30px";
       nav.style.height = isMobile ? "36px" : "70px";
       nav.style.fontSize = isMobile ? "12px" : "inherit";
       const select = nav.querySelector("select");
