@@ -7,13 +7,23 @@ export default function ItinerariPage({ bg, assignatures }) {
   const imageRef = useRef(null);
   const [selected, setSelected] = useState(null);
 
-  const isMobile = window.innerWidth <= 768;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const nav = document.querySelector("nav");
     if (nav) {
       nav.style.padding = isMobile ? "5px 10px" : "15px 30px";
       nav.style.height = isMobile ? "50px" : "70px";
+      nav.style.fontSize = isMobile ? "14px" : "inherit";
     }
   }, [isMobile]);
 
@@ -54,7 +64,7 @@ export default function ItinerariPage({ bg, assignatures }) {
         {selected && (
           <div
             style={{
-              transform: "scale(1)",
+              transform: "none",
               transformOrigin: "center",
               position: "fixed",
               top: 0,
@@ -66,10 +76,16 @@ export default function ItinerariPage({ bg, assignatures }) {
               justifyContent: "center",
               zIndex: 100,
               pointerEvents: "none",
-              padding: isMobile ? "10px" : "0",
+              padding: "10px",
             }}
           >
-            <div style={{ pointerEvents: "auto", width: isMobile ? "90%" : "auto" }}>
+            <div
+              style={{
+                pointerEvents: "auto",
+                width: isMobile ? "360px" : "auto",
+                maxWidth: "90vw",
+              }}
+            >
               <BoxPopup assignatura={selected} onClose={() => setSelected(null)} />
             </div>
           </div>
