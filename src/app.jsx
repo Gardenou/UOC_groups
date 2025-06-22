@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import navbar from "./navbar";
-import itinerariPage from "./itinerariPage";
+import Navbar from "./Navbar";
+import ItinerariPage from "./ItinerariPage";
 import { itinerarisData } from "./itineraris/index.jsx";
 
 export default function App() {
   return (
     <Router>
-      <navbar />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Navigate to="/basiques" replace />} />
         {Object.entries(itinerarisData).map(([slug, config]) => (
