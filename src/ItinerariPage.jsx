@@ -24,6 +24,11 @@ export default function ItinerariPage({ bg, assignatures }) {
       nav.style.padding = isMobile ? "2px 6px" : "15px 30px";
       nav.style.height = isMobile ? "36px" : "70px";
       nav.style.fontSize = isMobile ? "12px" : "inherit";
+      const select = nav.querySelector("select");
+      if (select) {
+        select.style.fontSize = isMobile ? "12px" : "inherit";
+        select.style.padding = isMobile ? "4px" : "8px";
+      }
     }
   }, [isMobile]);
 
