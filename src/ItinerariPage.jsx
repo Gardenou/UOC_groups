@@ -1,39 +1,39 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import BoxPopup from "./boxPopup";
 import "./ItinerariPage.css";
+import { supabase } from "./supabaseClient";
 
 export default function ItinerariPage({ bg, assignatures }) {
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const [selected, setSelected] = useState(null);
-
-  const [isMobile, setIsMobile] = useState(false);
+  const [ratings, setRatings] = useState({});
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+    const fetchRatings = async () => {
+      const { data, error } = await supabase.from("ratings").select();
+      if (!error && data) {
+        const grouped = {};
+        data.forEach(({ assignatura, criteri, puntuacio }) => {
+          const key = `${assignatura}_${criteri}`;
+          if (!grouped[key]) grouped[key] = [];
+          grouped[key].push(puntuacio);
+        });
+
+        const averages = {};
+        Object.keys(grouped).forEach((key) => {
+          const arr = grouped[key];
+          const avg = arr.reduce((a, b) => a + b, 0) / arr.length;
+          averages[key] = avg;
+        });
+        setRatings(averages);
+      }
     };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    fetchRatings();
   }, []);
 
-  useEffect(() => {
-    const nav = document.querySelector("nav");
-    if (nav) {
-      nav.style.padding = isMobile ? "5px 8px" : "15px 30px";
-      nav.style.height = isMobile ? "36px" : "70px";
-      nav.style.fontSize = isMobile ? "12px" : "inherit";
-      const select = nav.querySelector("select");
-      if (select) {
-        select.style.fontSize = isMobile ? "12px" : "inherit";
-        select.style.padding = isMobile ? "4px" : "8px";
-      }
-    }
-  }, [isMobile]);
-
   return (
-    <div style={{ paddingTop: isMobile ? "36px" : "70px", display: "flex", justifyContent: "center" }}>
+    <div style={{ paddingTop: "70px", display: "flex", justifyContent: "center" }}>
       <div
         ref={containerRef}
         style={{
@@ -87,11 +87,15 @@ export default function ItinerariPage({ bg, assignatures }) {
             <div
               style={{
                 pointerEvents: "auto",
-                width: isMobile ? "360px" : "auto",
+                width: "auto",
                 maxWidth: "90vw",
               }}
             >
-              <BoxPopup assignatura={selected} onClose={() => setSelected(null)} />
+              <BoxPopup
+                assignatura={selected}
+                ratings={ratings}
+                onClose={() => setSelected(null)}
+              />
             </div>
           </div>
         )}
