@@ -18,17 +18,18 @@ export default function ItinerariPage({ bg, assignatures }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Adapto  per pantalla mobil
   useEffect(() => {
     const nav = document.querySelector("nav");
     if (nav) {
       nav.style.padding = isMobile ? "5px 10px" : "15px 30px";
-      nav.style.height = isMobile ? "50px" : "70px";
+      nav.style.height = isMobile ? "30px" : "70px";
       nav.style.fontSize = isMobile ? "14px" : "inherit";
     }
   }, [isMobile]);
 
   return (
-    <div style={{ paddingTop: isMobile ? "50px" : "70px", display: "flex", justifyContent: "center" }}>
+    <div style={{ paddingTop: isMobile ? "30px" : "70px", display: "flex", justifyContent: "center" }}>
       <div
         ref={containerRef}
         style={{
@@ -82,7 +83,7 @@ export default function ItinerariPage({ bg, assignatures }) {
             <div
               style={{
                 pointerEvents: "auto",
-                width: isMobile ? "360px" : "auto",
+                width: isMobile ? "180px" : "auto",
                 maxWidth: "90vw",
               }}
             >
