@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./Navbar";
-import ItinerariPage from "./ItinerariPage";
+import Navbar from "./navbar";
+import ItinerariPage from "./itinerariPage";
 import { itinerarisData } from "./itineraris/index.jsx";
 
 export default function App() {

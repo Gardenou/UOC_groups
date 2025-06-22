@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
-import BoxPopup from "./BoxPopup";
-import "./ItinerariPage.css";
+import BoxPopup from "./boxPopup";
+import "./itinerariPage.css";
 
 export default function ItinerariPage({ bg, assignatures }) {
   const containerRef = useRef(null);
