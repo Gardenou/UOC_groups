@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import BoxPopup from "./boxPopup";
+import BoxPopup from "./BoxPopup";
 import "./ItinerariPage.css";
 
 export default function ItinerariPage({ bg, assignatures }) {
@@ -7,8 +7,18 @@ export default function ItinerariPage({ bg, assignatures }) {
   const imageRef = useRef(null);
   const [selected, setSelected] = useState(null);
 
+  const isMobile = window.innerWidth <= 768;
+
+  useEffect(() => {
+    const nav = document.querySelector("nav");
+    if (nav) {
+      nav.style.padding = isMobile ? "5px 10px" : "15px 30px";
+      nav.style.height = isMobile ? "50px" : "70px";
+    }
+  }, [isMobile]);
+
   return (
-    <div style={{ paddingTop: "70px", display: "flex", justifyContent: "center" }}>
+    <div style={{ paddingTop: isMobile ? "50px" : "70px", display: "flex", justifyContent: "center" }}>
       <div
         ref={containerRef}
         style={{
@@ -41,7 +51,29 @@ export default function ItinerariPage({ bg, assignatures }) {
           ></div>
         ))}
 
-        {selected && <BoxPopup assignatura={selected} onClose={() => setSelected(null)} />}
+        {selected && (
+          <div
+            style={{
+              transform: "scale(1)",
+              transformOrigin: "center",
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 100,
+              pointerEvents: "none",
+              padding: isMobile ? "10px" : "0",
+            }}
+          >
+            <div style={{ pointerEvents: "auto", width: isMobile ? "90%" : "auto" }}>
+              <BoxPopup assignatura={selected} onClose={() => setSelected(null)} />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
