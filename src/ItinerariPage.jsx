@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import BoxPopup from "./BoxPopup";
+import BoxPopup from "./boxPopup";
 import "./ItinerariPage.css";
 
 export default function ItinerariPage({ bg, assignatures }) {
