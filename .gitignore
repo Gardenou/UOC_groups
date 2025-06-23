@@ -10,6 +10,3 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Evita filtrar secrets
-src/supabaseClient.jsx
-
