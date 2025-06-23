@@ -1,6 +1,6 @@
 .assignatura-box {
-  background-color: rgba(255, 255, 0, 0.15);
-  border: 2px solid yellow;
+  background-color: transparent;
+  border: 2.5px solid yellow;
   border-radius: 0px;
   cursor: pointer;
   transition: background-color 0.2s;

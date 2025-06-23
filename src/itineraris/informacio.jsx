@@ -2,14 +2,174 @@ import bg from "../../public/informacio_bg.png";
 
 const assignatures = [
 {
-    "nom": "ALG",
+    "nom": "XAI",
     "descripcio": "Descripció...",
-    "telegram": "https://t.me/+Tn4Ql3wROm9kYmI0",
-    "plaDocent": "https://apps.uoc.edu/PlaDocent/PlaDocent?Semestre=20251&SignatureCode=05.557&Context=2&Locale=ca", 
-    "top": "12.00%",
-    "left": "4.30%",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "22.60%",
+    "left": "17.80%",
     "width": "11.00%",
     "height": "7.5%"
+},
+{
+    "nom": "SSOO",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "22.70%",
+    "left": "30.40%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "22.60%",
+    "left": "42.80%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "22.60%",
+    "left": "56.60%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "22.60%",
+    "left": "70.00%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "22.60%",
+    "left": "83.00%",
+    "width": "11.00%",
+    "height": "7.8%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "38.80%",
+    "left": "4.00%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "38.90%",
+    "left": "17.80%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "38.80%",
+    "left": "30.30%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "38.90%",
+    "left": "42.80%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "38.80%",
+    "left": "56.80%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "38.80%",
+    "left": "70.20%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "38.80%",
+    "left": "4.00%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "50.90%",
+    "left": "17.80%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "50.90%",
+    "left": "42.90%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "50.90%",
+    "left": "70.10%",
+    "width": "11.00%",
+    "height": "7.5%"
+},
+{
+    "nom": "XAI",
+    "descripcio": "Descripció...",
+    "telegram": "",
+    "plaDocent": "", 
+    "top": "61.70%",
+    "left": "53.80%",
+    "width": "27.40%",
+    "height": "7.8%"
 }
 ];
 
