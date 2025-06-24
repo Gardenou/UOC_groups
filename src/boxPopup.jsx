@@ -70,6 +70,8 @@ const StarRating = ({ label, assignaturaId, value }) => {
 
 export default function BoxPopup({ assignatura, onClose, ratings }) {
   const nom = assignatura.nom;
+  const [showInfo, setShowInfo] = useState(false);
+
   return (
     <div
       style={{
@@ -92,6 +94,7 @@ export default function BoxPopup({ assignatura, onClose, ratings }) {
           borderRadius: "10px",
           maxWidth: "400px",
           width: "90%",
+          position: "relative",
         }}
       >
         <h2>{nom}</h2>
@@ -137,10 +140,81 @@ export default function BoxPopup({ assignatura, onClose, ratings }) {
           value={ratings[`${nom}_Global`]}
         />
 
+        {/* Enllaç informatiu */}
+        <div
+          onClick={() => setShowInfo(true)}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "10px",
+            cursor: "pointer",
+            color: "#0070f3",
+            fontSize: "14px",
+            fontWeight: "500",
+            gap: "6px",
+          }}
+        >
+          <span style={{ fontSize: "18px" }}>❓</span>
+          <span style={{ textDecoration: "underline" }}>
+            ¿Cómo funciona el sistema de dificultad?
+          </span>
+        </div>
+
+        {/* Modal secundari */}
+        {showInfo && (
+          <div
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              backgroundColor: "rgba(0,0,0,0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 200,
+            }}
+          >
+            <div
+              style={{
+                backgroundColor: "#fff",
+                padding: "20px",
+                borderRadius: "10px",
+                maxWidth: "500px",
+                width: "90%",
+                whiteSpace: "pre-line",
+              }}
+            >
+              <h3 style={{ marginBottom: "10px" }}>¿Cómo funciona el sistema de dificultad?</h3>
+              <p style={{ fontSize: "14px" }}>
+                Hay tres conceptos disponibles: Materia (la dificultad de los contenidos de la asignatura), Tiempo (la cantidad de tiempo que hay que invertir en ella) y Global (el nombre habla por sí mismo, ¿no?).{'\n\n'}
+                Podeis votar del 1 al 5 la dificultad que os parece que tiene la asignatura, pero recordad: MUCHA GENTE SE GUIA POR ESTO PARA MATRICULARSE, así que por favor, haced un uso responsable del sistema de votación, por el bien de todos.{'\n\n'}
+                Del mismo que entrais para mirar la dificultad, os pedimos que cuando termineis dediqueis un tiempo a volver aquí i valorarla. ¡Gracias!
+              </p>
+              <button
+                onClick={() => setShowInfo(false)}
+                style={{
+                  marginTop: "15px",
+                  padding: "6px 14px",
+                  backgroundColor: "#0070f3",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                }}
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Botó de tancar */}
         <button
           onClick={onClose}
           style={{
-            marginTop: "10px",
+            marginTop: "20px",
             padding: "8px 16px",
             backgroundColor: "#333",
             color: "white",
