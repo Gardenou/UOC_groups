@@ -39,7 +39,7 @@ function AppRoutes() {
         {Object.entries(itinerarisData).map(([slug, config]) => {
           // Substitueix -ca per -es si cal
           const bg = language === "ca" ? config.bg : config.bg.replace("_ca", "_es");
-
+          console.log("Ruta del fons:", bg);
           return (
             <Route
               key={slug}
