@@ -7,7 +7,7 @@ const itineraris = [
   { slug: "informacio", nom: "Tecnologies de la Informació" },
   { slug: "sistemes", nom: "Sistemes de la Informació" },
   { slug: "computacio", nom: "Computació" },
-  { slug: "enginyeria-computadors", nom: "Enginyeria de Computadors" },
+  { slug: "computadors", nom: "Enginyeria de Computadors" },
   { slug: "programari", nom: "Enginyeria del Programari" },
   { slug: "optatives", nom: "Optatives" }
 ];
