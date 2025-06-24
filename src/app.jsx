@@ -38,7 +38,7 @@ function AppRoutes() {
         <Route path="/" element={<Navigate to="/basiques" replace />} />
         {Object.entries(itinerarisData).map(([slug, config]) => {
           // Substitueix -ca per -es si cal
-          const bg = language === "ca" ? config.bg : config.bg.replace("-ca", "-es");
+          const bg = language === "ca" ? config.bg : config.bg.replace("_ca", "_es");
 
           return (
             <Route
