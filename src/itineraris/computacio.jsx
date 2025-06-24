@@ -1,4 +1,4 @@
-import bg from "../../public/computacio_bg.png";
+import bg from "../../public/computacio_bg-ca.png";
 
 const assignatures = [
 {

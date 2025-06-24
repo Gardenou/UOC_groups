@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { supabase } from "./supabaseClient";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const StarRating = ({ label, assignaturaId, value }) => {
   const [rating, setRating] = useState(0);
@@ -71,6 +72,7 @@ const StarRating = ({ label, assignaturaId, value }) => {
 export default function BoxPopup({ assignatura, onClose, ratings }) {
   const nom = assignatura.nom;
   const [showInfo, setShowInfo] = useState(false);
+  const { language } = useLanguage();
 
   return (
     <div
@@ -144,21 +146,14 @@ export default function BoxPopup({ assignatura, onClose, ratings }) {
 
         {/* Enllaç informatiu amb icona */}
         <div
+          style={{ cursor: "pointer", marginTop: "10px", display: "flex", alignItems: "center", gap: "6px" }}
           onClick={() => setShowInfo(true)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: "10px",
-            cursor: "pointer",
-            color: "#0070f3",
-            fontSize: "14px",
-            fontWeight: "500",
-            gap: "6px",
-          }}
         >
           <span style={{ fontSize: "18px" }}>❓</span>
           <span style={{ textDecoration: "underline" }}>
-            ¿Cómo funciona el sistema de dificultad?
+            {language === "ca"
+              ? "Com funciona el sistema de dificultat?"
+              : "¿Cómo funciona el sistema de dificultad?"}
           </span>
         </div>
 
@@ -190,11 +185,15 @@ export default function BoxPopup({ assignatura, onClose, ratings }) {
                 whiteSpace: "pre-line",
               }}
             >
-              <h3 style={{ marginBottom: "10px" }}>¿Cómo funciona el sistema de dificultad?</h3>
-              <p style={{ fontSize: "14px" }}>
-                Hay tres conceptos disponibles: Materia (la dificultad de los contenidos de la asignatura), Tiempo (la cantidad de tiempo que hay que invertir en ella) y Global (el nombre habla por sí mismo, ¿no?).{'\n\n'}
-                Podeis votar del 1 al 5 la dificultad que os parece que tiene la asignatura, pero recordad: MUCHA GENTE SE GUIA POR ESTO PARA MATRICULARSE, así que por favor, haced un uso responsable del sistema de votación, por el bien de todos.{'\n\n'}
-                Del mismo que entrais para mirar la dificultad, os pedimos que cuando termineis dediqueis un tiempo a volver aquí i valorarla. ¡Gracias!
+              <h3 style={{ marginBottom: "10px" }}>
+                {language === "ca"
+                  ? "Com funciona el sistema de dificultat?"
+                  : "¿Cómo funciona el sistema de dificultad?"}
+              </h3>
+              <p style={{ fontSize: "14px", whiteSpace: "pre-line" }}>
+                {language === "ca"
+                  ? `Hi ha tres conceptes disponibles: Matèria (la dificultat dels continguts de l’assignatura), Temps (la quantitat de temps que cal invertir-hi) i Global (el nom ja ho diu tot, oi?).\n\nPodeu votar del 1 al 5 la dificultat que us sembla que té l’assignatura, però recordeu: MOLTA GENT ES GUIA PER AIXÒ PER MATRICULAR-SE, així que, si us plau, feu-ne un ús responsable pel bé de tothom.\n\nIgual que consulteu la dificultat abans de matricular-vos, us demanem que, quan acabeu l’assignatura, torneu i la valoreu. Gràcies!`
+                  : `Hay tres conceptos disponibles: Materia (la dificultad de los contenidos de la asignatura), Tiempo (la cantidad de tiempo que hay que invertir en ella) y Global (el nombre habla por sí mismo, ¿no?).\n\nPodéis votar del 1 al 5 la dificultad que os parece que tiene la asignatura, pero recordad: MUCHA GENTE SE GUÍA POR ESTO PARA MATRICULARSE, así que por favor, haced un uso responsable del sistema de votación, por el bien de todos.\n\nDel mismo modo que entráis a principios de semestre para consultar la dificultad, os pedimos que cuando la terminéis, dediquéis un tiempo a volver aquí y valorarla. ¡Gracias!`}
               </p>
               <button
                 onClick={() => setShowInfo(false)}
