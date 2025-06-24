@@ -1,4 +1,5 @@
-import bg from "../../public/basiques_ca.png";
+//import bg from "../../public/basiques_ca.png";
+const bg = "/public/basiques_ca.png";
 
 const assignatures = [
 // COL 1
