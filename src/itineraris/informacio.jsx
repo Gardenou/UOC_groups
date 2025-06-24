@@ -22,7 +22,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
+    "nom": "GP",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -32,7 +32,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
+    "nom": "ENGINYERIA PROGRAMARI",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -42,7 +42,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
+    "nom": "UBD",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -52,7 +52,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
+    "nom": "DBD",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -62,7 +62,7 @@ const assignatures = [
     "height": "7.8%"
 },
 {
-    "nom": "XAI",
+    "nom": "ESTRUCTURA XARXES COMPUTADORS",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -72,7 +72,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
+    "nom": "SEGURETAT EN XARXES DE COMPUTADORS",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -82,7 +82,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
+    "nom": "AXSO",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -92,7 +92,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
+    "nom": "FONAMENTS SI",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -102,7 +102,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
+    "nom": "IPO",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -112,7 +112,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
+    "nom": "COMERÇ ELECTRONIC",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -122,17 +122,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
-    "descripcio": "Descripció...",
-    "telegram": "",
-    "plaDocent": "", 
-    "top": "38.80%",
-    "left": "4.00%",
-    "width": "11.00%",
-    "height": "7.5%"
-},
-{
-    "nom": "XAI",
+    "nom": "DISSENY XARXES COMPUTADORS",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -142,7 +132,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
+    "nom": "INTEGRACIO DE SI",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -152,7 +142,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
+    "nom": "ABD",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
@@ -162,7 +152,7 @@ const assignatures = [
     "height": "7.5%"
 },
 {
-    "nom": "XAI",
+    "nom": "TFG",
     "descripcio": "Descripció...",
     "telegram": "",
     "plaDocent": "", 
