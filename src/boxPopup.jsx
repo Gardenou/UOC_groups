@@ -74,6 +74,7 @@ export default function BoxPopup({ assignatura, onClose, ratings }) {
 
   return (
     <div
+      onClick={onClose}
       style={{
         position: "fixed",
         top: 0,
@@ -88,6 +89,7 @@ export default function BoxPopup({ assignatura, onClose, ratings }) {
       }}
     >
       <div
+        onClick={(e) => e.stopPropagation()}
         style={{
           backgroundColor: "#fff",
           padding: "20px",
@@ -140,7 +142,7 @@ export default function BoxPopup({ assignatura, onClose, ratings }) {
           value={ratings[`${nom}_Global`]}
         />
 
-        {/* Enllaç informatiu */}
+        {/* Enllaç informatiu amb icona */}
         <div
           onClick={() => setShowInfo(true)}
           style={{
@@ -163,6 +165,7 @@ export default function BoxPopup({ assignatura, onClose, ratings }) {
         {/* Modal secundari */}
         {showInfo && (
           <div
+            onClick={() => setShowInfo(false)}
             style={{
               position: "fixed",
               top: 0,
@@ -177,6 +180,7 @@ export default function BoxPopup({ assignatura, onClose, ratings }) {
             }}
           >
             <div
+              onClick={(e) => e.stopPropagation()}
               style={{
                 backgroundColor: "#fff",
                 padding: "20px",
