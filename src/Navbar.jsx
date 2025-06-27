@@ -69,7 +69,7 @@ const itineraris = [
   { slug: "optatives", nom_ca: "Optatives", nom_es: "Optativas" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onOpenSearch }) {
   const navigate = useNavigate();
   const { language, toggleLanguage } = useLanguage();
 
@@ -119,6 +119,22 @@ export default function Navbar() {
             </option>
           ))}
         </select>
+
+        <button
+          onClick={onOpenSearch}
+          style={{
+            fontSize: "14px",
+            padding: "6px 12px",
+            borderRadius: "6px",
+            backgroundColor: "#0088cc",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+            fontWeight: "bold",
+          }}
+        >
+          🔍 {language === "ca" ? "Assignatures" : "Asignaturas"}
+        </button>
 
         <button
           onClick={toggleLanguage}
