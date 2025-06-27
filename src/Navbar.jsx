@@ -79,6 +79,7 @@ export default function Navbar() {
 
   return (
     <div
+      className="navbar-container"
       style={{
         position: "fixed",
         top: 0,
@@ -92,9 +93,9 @@ export default function Navbar() {
         zIndex: 1000,
       }}
     >
-      <img src={logo} alt="UOC logo" style={{ height: "60px" }} />
+      <img src={logo} alt="UOC logo" className="navbar-logo" style={{ height: "60px" }} />
       
-      <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+      <div className="navbar-controls" style={{ display: "flex", alignItems: "center", gap: "15px" }}>
         <select
           onChange={handleChange}
           defaultValue=""

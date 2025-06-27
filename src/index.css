@@ -8,3 +8,41 @@ body {
 * {
   box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+  /* Si la pantalla es menor a 768px, s'ajusta el navbar */
+  .navbar-container {
+    flex-direction: column !important;
+    padding: 8px 15px !important;
+    gap: 8px !important;
+  }
+
+  .navbar-controls {
+    flex-direction: row !important;
+    gap: 8px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  
+  .navbar-controls select {
+    font-size: 14px !important;
+    padding: 6px 15px !important;
+    flex: 1 !important;
+    max-width: 200px !important;
+  }
+  
+  .navbar-controls button {
+    font-size: 12px !important;
+    padding: 6px 8px !important;
+    min-width: 60px !important;
+  }
+  
+  .navbar-logo {
+    height: 45px !important;
+  }
+  
+  /* Si la pantalla es menor a 768px, s'ajusta el padding del main content */
+  div[style*="paddingTop: \"70px\""] {
+    padding-top: 120px !important;
+  }
+}

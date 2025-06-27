@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { supabase } from "./supabaseClient";
 import { useLanguage } from "../contexts/LanguageContext";
 
@@ -73,6 +73,26 @@ export default function BoxPopup({ assignatura, onClose, ratings }) {
   const nom = assignatura.nom;
   const [showInfo, setShowInfo] = useState(false);
   const { language } = useLanguage();
+
+  // Afegir event listener per la tecla Escape
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        if (showInfo) {
+          setShowInfo(false);
+        } else {
+          onClose();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Cleanup: eliminar l'event listener quan el component es desmunta
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [showInfo, onClose]);
 
   return (
     <div
