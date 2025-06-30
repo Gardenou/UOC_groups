@@ -21,21 +21,28 @@ export default function App() {
     </Router>
   );
 }*/
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import ItinerariPage from "./ItinerariPage";
+import SearchGroups from "./SearchGroups";
+import BoxPopup from "./boxPopup";
 import { itinerarisData } from "./itineraris/index.jsx";
 import { LanguageProvider, useLanguage } from "../contexts/LanguageContext";
 
 function AppRoutes() {
   const { language } = useLanguage();
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [selectedFromSearch, setSelectedFromSearch] = useState(null);
 
   return (
     <>
-      <Navbar />
+      <Navbar 
+        onOpenSearch={() => setIsSearchOpen(true)}
+      />
       <Routes>
         <Route path="/" element={<Navigate to="/basiques" replace />} />
+
         {Object.entries(itinerarisData).map(([slug, config]) => {
           // Substitueix -ca per -es si cal
           const bg = language === "ca" ? config.bg : config.bg.replace("_ca", "_es");
@@ -49,6 +56,46 @@ function AppRoutes() {
           );
         })}
       </Routes>
+
+      {/* Popup buscador de grups */}
+      <SearchGroups 
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        onSelectAssignatura={(assignatura) => setSelectedFromSearch(assignatura)}
+      />
+
+      {/* Popup detalls assignatura des del buscador */}
+      {selectedFromSearch && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1100,
+            pointerEvents: "none",
+            padding: "10px",
+          }}
+        >
+          <div
+            style={{
+              pointerEvents: "auto",
+              width: "auto",
+              maxWidth: "90vw",
+            }}
+          >
+            <BoxPopup
+              assignatura={selectedFromSearch}
+              ratings={{}}
+              onClose={() => setSelectedFromSearch(null)}
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }

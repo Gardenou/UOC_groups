@@ -69,7 +69,7 @@ const itineraris = [
   { slug: "optatives", nom_ca: "Optatives", nom_es: "Optativas" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onOpenSearch }) {
   const navigate = useNavigate();
   const { language, toggleLanguage } = useLanguage();
 
@@ -79,6 +79,7 @@ export default function Navbar() {
 
   return (
     <div
+      className="navbar-container"
       style={{
         position: "fixed",
         top: 0,
@@ -92,9 +93,9 @@ export default function Navbar() {
         zIndex: 1000,
       }}
     >
-      <img src={logo} alt="UOC logo" style={{ height: "60px" }} />
+      <img src={logo} alt="UOC logo" className="navbar-logo" style={{ height: "60px" }} />
       
-      <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+      <div className="navbar-controls" style={{ display: "flex", alignItems: "center", gap: "15px" }}>
         <select
           onChange={handleChange}
           defaultValue=""
@@ -118,6 +119,22 @@ export default function Navbar() {
             </option>
           ))}
         </select>
+
+        <button
+          onClick={onOpenSearch}
+          style={{
+            fontSize: "14px",
+            padding: "6px 12px",
+            borderRadius: "6px",
+            backgroundColor: "#0088cc",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+            fontWeight: "bold",
+          }}
+        >
+          🔍 {language === "ca" ? "Assignatures" : "Asignaturas"}
+        </button>
 
         <button
           onClick={toggleLanguage}
