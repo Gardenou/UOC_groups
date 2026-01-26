@@ -124,7 +124,7 @@ const assignatures = [
 {
     "nom": "DISSENY XARXES COMPUTADORS",
     "descripcio": "Descripció...",
-    "telegram": "",
+    "telegram": "https://t.me/c/2606616453/10677",
     "plaDocent": "https://apps.uoc.edu/PlaDocent/PlaDocent?Semestre=20251&SignatureCode=05.576&Context=2&Locale=ca", 
     "top": "50.90%",
     "left": "17.80%",
